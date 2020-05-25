@@ -1,0 +1,191 @@
+body {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: rgb(255, 0, 0);
+}
+.main-container {
+  height: 100vh;
+  display: flex;
+}
+.left__side-block {
+  height: 100%;
+  width: 93px;
+  background-color: white;;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 37px 18px 0 18px;
+  
+}
+
+.nav-side{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 40%;
+  width: 100%;
+   
+   margin-bottom: 200px;
+  
+}
+.nav-side__link{
+  padding-left: 15px;
+  
+  
+}
+.logo{
+  padding-left: 15px;
+  
+}  
+img{
+  height: 90%;
+  
+}
+.help_logo{
+  margin-bottom: 30px;
+  padding-left: 15px;
+}
+
+h1{
+  font-family: SF UI Display;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 36px;
+  margin-left: 50px;
+  padding-top: 20px;
+}
+.top-border{
+  
+  
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  
+}
+.main-block{
+
+  
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  
+}
+.name_nav{
+  list-style-type: none;
+}
+.photo_nav{
+  margin-top: 2px;
+  margin-left: 20px;
+  width: 50px;
+  height: 50px;
+  
+}
+.quit_nav{
+  margin-left: 20px;
+  margin-right: 60px;
+  display: block;
+  width: 20px;
+  height: 19px;
+  margin-top: 18px;
+  background-image: url(../img/quit.svg)
+}
+.bell_nav{
+  margin-right: 10px;
+  margin-top: 15px;
+  padding: 0px;
+  display: block;
+  width: 17px;
+  height: 15px;
+
+  background-image: url(../img/bell.svg) 
+}
+.top-person{
+  display: flex;
+  list-style-type: none;
+  
+  
+}
+.left-top_block{
+  display:flex;
+  justify-content: space-between;
+  margin-top: 21px;
+ 
+  
+}
+
+.main-block__menu{
+  width: 100%;
+  
+  height: 100px;
+}
+.main-block__menu-tabs{
+  
+  height: 70px;
+
+}
+.main-block__menu-tabs .nav-tabs{
+
+  height: 70px;
+  border-bottom: 0 none;
+  background: transparent;
+}
+.main-block__menu-tabs .nav-tabs li{
+
+  padding: 5px 60px;
+  position: relative;
+}
+
+.main-block__menu-tabs .nav-tabs li a.active{
+
+  font-weight:  700;
+}
+.main-block__menu-tabs .nav-tabs li a.active::after{
+
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 50%;
+  left: 67px;
+  bottom: 0;
+  background: #344267;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #333333;
+  border: none;
+}
+.nav-tabs .nav-link:hover {
+  
+
+  border: none;
+}
+.nav-item a {
+  color: #333333;
+  
+}
+.nav-item a:hover  {
+  color: #333333;
+  
+}
+
+.nav-item{
+  
+  padding:0;
+  height: 60px;
+}
+.nav-link{
+  margin-top: 10px;
+}
+.nav-tabs .nav-link  {
+  border: none;
+}
+
