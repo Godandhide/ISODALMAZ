@@ -58,62 +58,821 @@
             <nav class="main-block__menu">
                 <div class="main-block__menu-tabs">
                     <ul class="nav nav-tabs">
-                        <li class="nav-item ">
+                        <li class="nav-item active">
                             <a class ="nav-link active" data-toggle ="tab" href="#employees">Все сотрудники</a> 
                         </li>
                         <li class="nav-item">
-                            <a class ="nav-link" data-toggle ="tab" href="#allviolations">Все нарушения</a>
+                            <a  class ="nav-link" data-toggle ="tab" href="#all-violations">Все нарушения</a> 
                         </li>
                         <li class="nav-item">
-                            <a class ="nav-link" data-toggle ="tab" href="#lastviolations">Последние нарушения</a> 
+                            <a class ="nav-link" data-toggle ="tab" href="#last-violations" >Последние нарушения</a> 
                         </li>
-                    </ul>                    
-                </div>                
+
+                    </ul>
+
+                </div>
+                <div class="grey_line"></div>
+                
             </nav>
             <div class ="tab-content">
-                <!--First block -->
                 <div class ="main-information tab-pane fade show active" id="employees">
-                    <div class = "main-information__nav">
+                    <div class ="main-information__nav">
                         <div class="buttons">
-                            <button>Новый сотрудник</button>
-                            <button>Новая заявка</button>
-                        </div>                 
+                            <button>Новый сотрудник<img class="button_img" src="img/New_employee.svg" alt=""></button>
+                            <button>Новая заявка<img class="button_img" src="img/New_request.svg" alt=""></button>
+
+                        </div>
+
+
+                    
                         <div class="main-information__nav-search">
-                            <input type="text" placeholder="Введите ФИО. подразделение спе...">
+
+                        <input type="text" placeholder="Введите ФИО. подразделение спе...">
                         </div>
                     </div>
-                </div>
-                <!--Second block -->
-                <div class ="main-information tab-pane fade show" id="allviolations">
-                    <h1>ЧЛЕН</h1>
-                    <div class="buttons">
-                        <button>Нdfhd заявкудник</button>
-                        <button>Новаdfhd заявквка</button>
-                    </div>                 
-                    <div class="main-information__nav-search">
-                        <input type="text" placeholder="В спе...">
+                    <div class="main-information__employees-table">
+                        <span>Фамилия Имя Отчество</span>
+                        <span>Объект</span>
+                        <span>Специальность</span>
+                        <span>Нарушений</span>
                     </div>
+                    <div class="employee-wrapper">
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                    </div>
+
+
+
                 </div>
 
-                <div class ="tab-pane fade show" id="lastviolations">
-                    <div calss = "main-information__nav">
-                        <div class="buttons">
-                            <button>gfdhdfhfdh</button>
-                            <button>dfhfdhdfhd заявка</button>
-                        </div>                 
+
+                <div class ="main-information tab-pane fade" id="all-violations">
+                    <div class ="main-information__nav">
+                        <div class="show-list">
+                            <span>Показывать:</span>
+                            <select>
+                                <option>За все время</option>
+                                <option>За неделю</option>
+                                <option>За месяц</option>
+                                <option>За год</option>
+                            </select>
+
+                        </div>
+
+
+                    
                         <div class="main-information__nav-search">
-                            <input type="text" placeholder="Введите ФИО. подразделение спе...">
+
+                        <input type="text" placeholder="Введите ФИО. подразделение спе...">
                         </div>
                     </div>
+                    <div class="main-information__employees-table">
+                        <span>Фамилия Имя Отчество</span>
+                        <span>Объект</span>
+                        <span>Специальность</span>
+                        <span>Нарушений</span>
+                    </div>
+                    <div class="employee-wrapper">
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                    </div>
+
+
+
                 </div>
-            
+                <div class ="main-information tab-pane fade" id="last-violations">
+                    <div class ="main-information__nav">
+                        <div class="show-list">
+                            <span>Сортировать:</span>
+                            <select>
+                                <option>По дате штрафа</option>
+                                <option>По нарушениям</option>
+                                
+                            </select>
+
+                        </div>
+
+
+                    
+                        <div class="main-information__nav-search">
+
+                        <input type="text" placeholder="Введите ФИО. подразделение спе...">
+                        </div>
+                    </div>
+                    <div class="main-information__employees-table">
+                        <span>Фамилия Имя Отчество</span>
+                        <span>Объект</span>
+                        <span>Специальность</span>
+                        <span>Нарушений</span>
+                    </div>
+                    <div class="employee-wrapper">
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                        <div class="employee-block">
+                            <div class="employee">
+                                
+                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                            </div>
+                            <span>6 объектов</span>
+                            <span>Слесарь-технолог</span>
+                            
+                            <span>3/10 <img src="img/More.svg" alt=""></span>
+                            
+                            
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
             </div>
         </div> 
           
     </div>
     
-      
- 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>     
+
 
 
 </body>

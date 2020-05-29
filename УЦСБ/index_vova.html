@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <title>Все сотрудники</title>
+</head>
+<body>
+    <!-- ВЕСЬ БЛОК -->
+    <div class="main-container tab-content">
+        <!-- САЙДБАР -->
+        <div class="left__side-block">
+            <a href="#" class="logo"><img src="img/logo.svg" alt=""> </a>
+            <div class="nav-side">
+                
+                <a href="#" class="nav-side__link"><img class="menu_buttons" src="img/Home_gray.svg" alt=""></a>
+                <a href="#" class="nav-side__link"><img class="menu_buttons"  src="img/Document_gray.svg" alt=""></a>
+                <a href="#" class="nav-side__link"><img class="menu_buttons"  src="img/Add_Personal_gray.svg" alt=""></a>
+                
+            </div>
+            <a href="#" class="help_logo"><img src="img/Help_gray.svg" alt=""></a>
+        </div>
+         <!--ОСНОВНОЙ КОНТЕНТ--> 
+         <div class="main-block" id="main-block__first">
+            <div class="top-border">
+                  <h1>Главная</h1>
+                  <div class="left-top_block">
+                    <a href="#" class="bell_nav"></a>
+                    <div class="top-person">
+                        
+                                <ul class="name_nav">
+                                    <li class ="name">Глухов Антон</li>
+                                    <li class >УПЦ-23</li>
+                                </ul>
+                        
+                                <a href="#" class="photo_nav"><img src="img/photo_name.svg" alt=""></a>
+                        </div>
+                    <a href="#" class="quit_nav"></a>
+                </div>
+            </div>
+
+            <nav class="main-block__menu">
+                <div class="main-block__menu-tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item ">
+                            <a class ="nav-link active" data-toggle ="tab" href="#employees">Все сотрудники</a> 
+                        </li>
+                        <li class="nav-item">
+                            <a class ="nav-link" data-toggle ="tab" href="#allviolations">Все нарушения</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class ="nav-link" data-toggle ="tab" href="#lastviolations">Последние нарушения</a> 
+                        </li>
+                    </ul>
+                </div>                
+            </nav>
+
+            <div class ="tab-content">
+                <!--First block -->
+                <div class ="main-information tab-pane fade show active" id="employees">
+                    <div class = "main-information__nav">
+                        <div class="buttons">
+                            <button>Новый сотрудник</button>
+                            <button>Новая заявка</button>
+                        </div>                 
+                        <div class="main-information__nav-search">
+                            <input type="text" placeholder="Введите ФИО. подразделение спе...">
+                        </div>
+                    </div>
+                </div>
+                <!--Second block -->
+                <div class ="main-information tab-pane fade show" id="allviolations">
+                    <h1>ЧЛЕН</h1>
+                    <div class="buttons">
+                        <button>Нdfhd заявкудник</button>
+                        <button>Новаdfhd заявквка</button>
+                    </div>                 
+                    <div class="main-information__nav-search">
+                        <input type="text" placeholder="В спе...">
+                    </div>
+                </div>
+
+                <div class ="tab-pane fade show" id="lastviolations">
+                    <div calss = "main-information__nav">
+                        <div class="buttons">
+                            <button>gfdhdfhfdh</button>
+                            <button>dfhfdhdfhd заявка</button>
+                        </div>                 
+                        <div class="main-information__nav-search">
+                            <input type="text" placeholder="Введите ФИО. подразделение спе...">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+          
+    </div>
+    
+      
+ 
+
+
+</body>
+<script src="js/js.js"></script>
+<script src="js/jquery-3.5.1.min.js"></script>
+</html>
+  
