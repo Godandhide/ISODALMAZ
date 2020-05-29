@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Все сотрудники
+{% endblock %}
+
+{% block header %}
+Главная
+{% endblock %}
+
+{% block content %}
+<nav class="main-block__menu">
+                <div class="main-block__menu-tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item ">
+                            <a class ="nav-link active" data-toggle ="tab" href="#employees">Все сотрудники</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class ="nav-link" data-toggle ="tab" href="#allviolations">Все нарушения</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class ="nav-link" data-toggle ="tab" href="#lastviolations">Последние нарушения</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+<div class ="tab-content">
+                <!--First block -->
+                <div class ="main-information tab-pane fade show active" id="employees">
+                    <div class = "main-information__nav">
+                        <div class="buttons">
+                            <button>Новый сотрудник</button>
+                            <button>Новая заявка</button>
+                        </div>
+                        <div class="main-information__nav-search">
+                            <input type="text" placeholder="Введите ФИО. подразделение спе...">
+                        </div>
+                    </div>
+                </div>
+                <!--Second block -->
+                <div class ="main-information tab-pane fade show" id="allviolations">
+                    <h1>ЧЛЕН</h1>
+                    <div class="buttons">
+                        <button>Нdfhd заявкудник</button>
+                        <button>Новаdfhd заявквка</button>
+                    </div>
+                    <div class="main-information__nav-search">
+                        <input type="text" placeholder="В спе...">
+                    </div>
+                </div>
+
+                <div class ="tab-pane fade show" id="lastviolations">
+                    <div calss = "main-information__nav">
+                        <div class="buttons">
+                            <button>gfdhdfhfdh</button>
+                            <button>dfhfdhdfhd заявка</button>
+                        </div>
+                        <div class="main-information__nav-search">
+                            <input type="text" placeholder="Введите ФИО. подразделение спе...">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+{% endblock %}
