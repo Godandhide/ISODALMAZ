@@ -36,12 +36,12 @@ class Specialty(db.Model):
 
 class ViolationsList(db.Model):
     employee_id = db.Column(db.Integer, nullable=False)
-    violation_id = db.Column(db.Integer, nullable=False)
+    violation_id = db.Column(db.Integer, primary_key=True)
 
 
 class DocumentsList(db.Model):
     employee_id = db.Column(db.Integer, nullable=False)
-    document_id = db.Column(db.Integer, nullable=False)
+    document_id = db.Column(db.Integer, primary_key=True)
 
 
 class Document(db.Model):
