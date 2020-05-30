@@ -14,6 +14,9 @@ def index():
 def vova():
     return render_template("index_vova.html")
 
+@app.route('/newemployee')
+def newemployee():
+    return render_template("newemployee.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
