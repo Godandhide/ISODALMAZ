@@ -79,9 +79,9 @@ def index():
 def newemployee():
     return render_template("newemployee.html")
 
-@app.route('/newemployee')
-def newemployee():
-    return render_template("newemployee.html")
+@app.route('/autorization')
+def autorization():
+    return render_template("autorization.html")
 
 
 if __name__ == "__main__":
