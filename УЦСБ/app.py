@@ -83,6 +83,17 @@ def newemployee():
 def autorization():
     return render_template("autorization.html")
 
+def TestDB():
+    for i in range(10):
+        employee = Employee(surname="Иванов", name="Иван", middle_name="Николаевич", passport_series=5516,
+                            passport_number=126524, birth_date=datetime(i+1, i+1, i+1), pass_number=i * 10,
+                            object_id=0, specialty_id=0, violation_amount=i)
+        try:
+            db.session.add(employee)
+            db.session.commit()
+        except:
+            return "Ошибка"
+
 
 if __name__ == "__main__":
     app.run(debug=True)
