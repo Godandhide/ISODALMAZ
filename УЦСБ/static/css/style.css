@@ -266,7 +266,7 @@ h2{
 .grey_line{
   display: flex;
   height: 0px;
-  width: calc(100%-67px);
+  width: calc(100% - 67px);
   border: 1px solid #53678D;
   opacity: 0.2;
   margin-top: -3px;
@@ -324,7 +324,7 @@ button:focus {outline:0;}
   
   background: #e6e8eb;
   width: 6px;
-  border-radius: none;
+  border-radius: 0;
   
 }
 .employee-wrapper::-webkit-scrollbar-thumb {
