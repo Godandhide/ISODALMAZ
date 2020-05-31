@@ -9,6 +9,15 @@ body {
   background-color: rgb(255, 0, 0);
   
 }
+.home-button{
+  opacity: 1;
+}
+.document-button{
+  opacity: 0.4;
+}
+.person-button{
+  opacity: 0.4;
+}
 .main-container {
   height: 100vh;
   display: flex;
