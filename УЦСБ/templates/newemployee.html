@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Новый сотрудник
+{% endblock %}
+
+{% block header %}
+Новый сотрудник
+{% endblock %}
+
+{% block content %}
+<nav class="main-block__menu">
+                <div class="main-block__menu-tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item active">
+                            <a class ="nav-link active" data-toggle ="tab" href="#infoemployees">Информация о сотруднике</a>
+                        </li>
+                        <li class="nav-item">
+                            <a  class ="nav-link" data-toggle ="tab" href="#document">Основные документы</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grey_line"></div>
+            </nav>
+<div class ="tab-content">
+                <div class ="main-information tab-pane fade show active" id="infoemployees">
+                    <div class="info_table">
+                        <div class ="dowload">
+                            <div class="dowload-photo"><!--<div buttons  class="buttons"> -->
+                                <a href="#" class="anyface_photo"></a>
+                                <span class="text_span_photo">Загрузить фото</span>
+                                <a href="#" class="dowload_photo"></a>                           
+                            </div>
+                        </div>
+                        <div class="form-wrap_info_employees">
+                            <form action="post">
+                                <div class="first-row">
+                                    <div class="first_column">
+                                        <label for="surname">Фамилия <span class="red_star">*</span></label>
+                                        <input type="text" name="surname" placeholder="Иванов" required>
+                                    </div>   
+                                    <div class="first_column">                        
+                                        <label for="name">Имя <span class="red_star">*</span></label>
+                                        <input type="text" name="name" placeholder="Иван"  required>
+                                    </div> 
+                                    <div  class="first_column">
+                                        <label for="patronymic">Отчество</label>
+                                        <input type="text" name="patronymic" placeholder="Иванович" required>
+                                    </div> 
+                                </div>
+                                <div  class="first-row">
+                                    <div  class="first_column">
+                                        <label for="codepasport">Серия и номер паспорта</label>
+                                        <input type="text" name="codepasport" placeholder="1234 567890" required>
+                                    </div>
+                                    <div  class="first_column">
+                                        <label for="birthday">Дата рождения <span class="red_star">*</span></label>
+                                        <input type="date" name="birthday" placeholder="" required>
+                                    </div>
+                                    <div  class="first_column">
+                                        <label for="specialty">Специальность</label>
+                                        <select name="specialty" id="" required>  
+                                            <option value="locksmith"> Слесарь</option>
+                                            и Слесаря-технологашвея, столяр, токарь, инженер-металлург, доменщик, столевар, портной, ткач, фрезеровщик, инженер-технолог, инжинер-металлург, модельер-конструктор, экономист
+
+                                        </select>
+                                        <input type="text" name="specialty" placeholder="" required>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn_submit">Следующий шаг</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    
+                    
+
+                </div>
+                <div>
+                    <img src="../static/img/newemployee/pictures_table.svg" alt="">
+                </div>
+
+
+                <div class ="main-information tab-pane fade" id="document">
+                    <div class ="main-information__nav">
+                        <div class="show-list">
+                            <span>Показывать:</span>
+                            <select>
+                                <option>За все время</option>
+                                <option>За неделю</option>
+                                <option>За месяц</option>
+                                <option>За год</option>
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="main-information__nav-search">
+
+                        <input type="text" placeholder="Введите ФИО. подразделение спе...">
+                        </div>
+                    </div>
+                    <div class="main-information__employees-table">
+                        <span>Фамилия Имя Отчество</span>
+                        <span>Объект</span>
+                        <span>Специальность</span>
+                        <span>Нарушений</span>
+                    </div>
+                  
+
+
+
+                </div>
+                <div class ="main-information tab-pane fade" id="last-violations">
+                    <div class ="main-information__nav">
+                        <div class="show-list">
+                            <span>Сортировать:</span>
+                            <select>
+                                <option>По дате штрафа</option>
+                                <option>По нарушениям</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="main-information__nav-search">
+
+                        <input type="text" placeholder="Введите ФИО. подразделение спе...">
+                        </div>
+                    </div>
+                    <div class="main-information__employees-table">
+                        <span>Фамилия Имя Отчество</span>
+                        <span>Объект</span>
+                        <span>Специальность</span>
+                        <span>Нарушений</span>
+                    </div>
+                </div>
+            </div>
+{% endblock %}
+
+  
