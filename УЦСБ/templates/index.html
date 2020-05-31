@@ -158,16 +158,17 @@
                         <input type="text" placeholder="Введите ФИО. подразделение спе...">
                         </div>
                     </div>
-                    <div class="main-information__employees-table">
+                    <div class="main-information__employees-table violations-table">
                         <span>Фамилия Имя Отчество</span>
                         <span>Объект</span>
                         <span>Специальность</span>
+                        <span>Дата</span>
                         <span>Нарушений</span>
                     </div>
                     <div class="employee-wrapper">
                         {% for violation in Violations.query.filter(Violations.state < 3).order_by(Violations.state).all() %}
                         {% set employee = Employee.query.get(violation.employee_id) %}
-                        <div class="employee-block">
+                        <div class="employee-block violations-table">
                             <div class="employee">
 
                                 <span class="employee-name"><img src="../static/img/avatar.svg" alt=""><a href="#">{{employee.surname}} {{employee.name}} {{employee.middle_name}}</a></span>
@@ -180,6 +181,7 @@
                             <span>{{Object.query.get(ObjectsList.query.filter(ObjectsList.employee_id == employee.id).first().object_id).name}}</span>
                             {% endif %}
                             <span>{{Specialty.query.get(employee.specialty_id).name}}</span>
+                            <span></span>
 
                             <span>{{employee.violation_amount}}/10 <img src="../static/img/More.svg" alt=""></span>
                         </div>
