@@ -36,7 +36,7 @@
                 <div class ="main-information tab-pane fade show active" id="employees">
                     <div class ="main-information__nav">
                         <div class="buttons">
-                            <button>Новый сотрудник<img class="button_img" src="../static/img/New_employee.svg" alt=""><a href="/newemployee"></a></button>
+                            <button>Новый сотрудник<img class="button_img" src="../static/img/New_employee.svg" alt=""></button>
                             <button>Новая заявка<img class="button_img" src="../static/img/New_request.svg" alt=""></button>
 
                         </div>
@@ -55,15 +55,21 @@
                         <span>Нарушений</span>
                     </div>
                     <div class="employee-wrapper">
-                        {% for employee in employees %}
+                        {% for employee in Employee.query.order_by(Employee.violation_amount).all() %}
                         <div class="employee-block">
                             <div class="employee">
 
-                                <span class="employee-name"><img src="img/avatar.svg"
+                                <span class="employee-name"><img src="../static/img/avatar.svg"
                                                                  alt=""><a href="#">{{employee.surname}} {{employee.name}} {{employee.middle_name}}</a></span>
                             </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
+                            {% if ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count() > 1 %}
+                            <span>{{ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count()}} объектов</span>
+                            {% elif ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count() == 0 %}
+                            <span>Не указано</span>
+                            {% else %}
+                            <span>{{Object.query.get(ObjectsList.query.filter(ObjectsList.employee_id == employee.id).first().object_id).name}}</span>
+                            {% endif %}
+                            <span>{{Specialty.query.get(employee.specialty_id).name}}</span>
 
                             <span>{{employee.violation_amount}}/10 <img src="../static/img/More.svg" alt=""></span>
 
@@ -104,236 +110,26 @@
                         <span>Специальность</span>
                         <span>Нарушений</span>
                     </div>
-
                     <div class="employee-wrapper">
+                        {% for violation in Violations.query.order_by(Violations.state).all() %}
+                        {% set employee = Employee.query.get(violation.employee_id) %}
                         <div class="employee-block">
                             <div class="employee">
 
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">гнатий Анатольевич</a></span>
+                                <span class="employee-name"><img src="../static/img/avatar.svg" alt=""><a href="#">{{employee.surname}} {{employee.name}} {{employee.middle_name}}</a></span>
                             </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
+                            {% if ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count() > 1 %}
+                            <span>{{ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count()}} объектов</span>
+                            {% elif ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count() == 0 %}
+                            <span>Не указано</span>
+                            {% else %}
+                            <span>{{Object.query.get(ObjectsList.query.filter(ObjectsList.employee_id == employee.id).first().object_id).name}}</span>
+                            {% endif %}
+                            <span>{{Specialty.query.get(employee.specialty_id).name}}</span>
 
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
+                            <span>{{employee.violation_amount}}/10 <img src="../static/img/More.svg" alt=""></span>
                         </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
+                        {% endfor %}
                     </div>
 
 
@@ -365,234 +161,25 @@
                         <span>Нарушений</span>
                     </div>
                     <div class="employee-wrapper">
+                        {% for violation in Violations.query.filter(Violations.state < 3).order_by(Violations.state).all() %}
+                        {% set employee = Employee.query.get(violation.employee_id) %}
                         <div class="employee-block">
                             <div class="employee">
 
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
+                                <span class="employee-name"><img src="../static/img/avatar.svg" alt=""><a href="#">{{employee.surname}} {{employee.name}} {{employee.middle_name}}</a></span>
                             </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
+                            {% if ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count() > 1 %}
+                            <span>{{ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count()}} объектов</span>
+                            {% elif ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count() == 0 %}
+                            <span>Не указано</span>
+                            {% else %}
+                            <span>{{Object.query.get(ObjectsList.query.filter(ObjectsList.employee_id == employee.id).first().object_id).name}}</span>
+                            {% endif %}
+                            <span>{{Specialty.query.get(employee.specialty_id).name}}</span>
 
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
+                            <span>{{employee.violation_amount}}/10 <img src="../static/img/More.svg" alt=""></span>
                         </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
-                        <div class="employee-block">
-                            <div class="employee">
-
-                                <span class="employee-name"><img src="img/avatar.svg" alt=""><a href="#">Агафонов Игнатий Анатольевич</a></span>
-                            </div>
-                            <span>6 объектов</span>
-                            <span>Слесарь-технолог</span>
-
-                            <span>3/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
+                        {% endfor %}
                     </div>
 
 
