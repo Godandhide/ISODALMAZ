@@ -1,7 +1,7 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-import enum
+import enum, random
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///isodalmaz.db'
@@ -19,7 +19,7 @@ class Employee(db.Model):
     birth_date = db.Column(db.DateTime, nullable=False)
     pass_number = db.Column(db.Integer, nullable=False)
     specialty_id = db.Column(db.Integer, nullable=False)
-    violation_amount = db.Column(db.Integer, nullable=False)
+    violation_amount = db.Column(db.Integer, default=0)
     added_date = db.Column(db.DateTime, default=datetime.utcnow)
 
 
@@ -79,9 +79,32 @@ def index():
     return render_template("index.html", Employee=Employee, Violations=Violations,
                            ObjectsList=ObjectsList, Object=Object, Specialty=Specialty)
 
-@app.route('/newemployee')
+
+@app.route('/newemployee', methods=['GET', 'POST'])
 def newemployee():
-    return render_template("newemployee.html")
+    if request.method == 'POST':
+        surname = request.form['surname']
+        name = request.form['name']
+        middle_name = request.form['patronymic']
+        passport_series = int(request.form['codepasport'].split()[0])
+        passport_number = int(request.form['codepasport'].split()[1])
+        html_birth_date = request.form['birthday'].split('-')
+        birth_date = datetime(int(html_birth_date[0]), int(html_birth_date[1]), int(html_birth_date[2]))
+        pass_number = int(random.random()*89999999+10000000)
+        specialty_id = request.form['specialty']
+
+        new_employee = Employee(surname=surname, name=name, middle_name=middle_name, passport_series=passport_series,
+                                passport_number=passport_number, birth_date=birth_date, pass_number=pass_number,
+                                specialty_id=specialty_id)
+        try:
+            db.session.add(new_employee)
+            db.session.commit()
+            return redirect('#document')
+        except:
+            return "Произошла ошибка при добавлении записи в базу данных"
+    else:
+        return render_template("newemployee.html")
+
 
 @app.route('/autorization')
 def autorization():
