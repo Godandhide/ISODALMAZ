@@ -297,12 +297,21 @@ button:focus {outline:0;}
   
   width: calc(100% - 50px);
 }
-
+.violations-table{
+  grid-template-columns: 1.5fr 1fr 0.75fr 1fr 0.75fr;
+}
+.employee-wrapper .violations-table{
+  grid-template-columns: 1.5fr 1fr 0.75fr 1fr 0.75fr;
+}
 .main-information__employees-table span{
   opacity: 0.6;
 }
 
-
+.employee img{
+  padding-right: 20px;
+  width: auto;
+  height: 40px;
+}
 .employee-block{
   
   
