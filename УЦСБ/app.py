@@ -1,12 +1,13 @@
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-import enum, random
+import enum, random, os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///isodalmaz.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 class Employee(db.Model):
@@ -103,7 +104,24 @@ def newemployee():
         except:
             return "Произошла ошибка при добавлении записи в базу данных"
     else:
-        return render_template("newemployee.html")
+        next_id = '/uploadavatar/' + str(Employee.query.count() + 1)
+        return render_template("newemployee.html", next_id=next_id)
+
+
+@app.route("/uploadavatar/<int:id>", methods=['POST'])
+def uploadavatar(id):
+    target = os.path.join(APP_ROOT, 'user_avatars/')
+    print(target)
+
+    if not os.path.isdir(target):
+        os.mkdir(target)
+
+    for file in request.files.getlist("file"):
+        filename = str(id)
+        destination = "/".join([target, filename])
+        file.save(destination)
+
+    return render_template("newemployee.html")
 
 
 @app.route('/autorization')
