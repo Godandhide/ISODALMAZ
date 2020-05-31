@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href={% block style_path %}{% endblock %}>
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <title>Новый сотрудник</title>
+</head>
+<body>
+    <!-- ВЕСЬ БЛОК -->
+    <div class="main-container">
+        <!-- САЙДБАР -->
+        <div class="left__side-block">
+            <a href="#" class="logo"><img src="../static/img/logo.svg" alt=""> </a>
+            <div class="nav-side">
+
+                <a href="#" class="nav-side__link"><img class="menu_buttons" src="../static/img/Home_gray.svg" alt=""></a>
+                <a href="#" class="nav-side__link"><img class="menu_buttons" src="../static/img/Document_gray.svg" alt=""></a>
+                <a href="#" class="nav-side__link"><img class="menu_buttons" src="../static/img/Add_Personal_gray.svg" alt=""></a>
+
+            </div>
+            <a href="#" class="help_logo"><img src="../static/img/Help_gray.svg" alt=""></a>
+        </div>
+        <div class="main-block" id="main-block__first">
+            <div class="top-border">
+                  <h1>Новый сотрудник</h1>                  
+            </div>
+
+                <nav class="main-block__menu">
+                                <div class="main-block__menu-tabs">
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item active">
+                                            <a class ="nav-link" data-toggle ="tab" href="#infoemployees">Информация о сотруднике</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a  class ="nav-link active" data-toggle ="tab" href="#document">Основные документы</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="grey_line"></div>
+                            </nav>
+                            
+                                
+                <div class ="tab-content">
+                                <div class ="main-information tab-pane fade" id="infoemployees">
+                                    <div class="info_table">
+                                        <div class ="dowload">
+                                            <div class="dowload-photo"><!--<div buttons  class="buttons"> -->
+                                                <a href="#" class="anyface_photo"></a>
+                                                <span class="text_span_photo">Загрузить фото</span>
+                                                <a href="#" class="dowload_photo"></a>                           
+                                            </div>
+                                        </div>
+                                        <div class="form-wrap_info_employees">
+                                            <form action="post">
+                                                <div class="first-row">
+                                                    <div class="first_column">
+                                                        <label for="surname">Фамилия <span class="red_star">*</span></label>
+                                                        <input type="text" name="surname" placeholder="Иванов" required>
+                                                    </div>   
+                                                    <div class="first_column">                        
+                                                        <label for="name">Имя <span class="red_star">*</span></label>
+                                                        <input type="text" name="name" placeholder="Иван"  required>
+                                                    </div> 
+                                                    <div  class="first_column">
+                                                        <label for="patronymic">Отчество</label>
+                                                        <input type="text" name="patronymic" placeholder="Иванович" required>
+                                                    </div> 
+                                                </div>
+                                                <div  class="first-row">
+                                                    <div  class="first_column">
+                                                        <label for="codepasport">Серия и номер паспорта</label>
+                                                        <input type="text" name="codepasport" placeholder="1234 567890" required>
+                                                    </div>
+                                                    <div  class="first_column">
+                                                        <label for="birthday">Дата рождения <span class="red_star">*</span></label>
+                                                        <input type="date" name="birthday" placeholder="" required>
+                                                    </div>
+                                                    <div  class="first_column">
+                                                        <label for="specialty">Специальность</label>
+                                                        <select name="specialty" id="" required>  
+                                                            <option value="locksmith">Слесарь</option>
+                                                            <option value="technician_fitter">Слесарь-технолог</option>
+                                                            <option value="seamstress">швея</option>
+                                                            <option value="carpenter"> столяр</option>
+                                                            <option value="turner"> токарь</option>
+                                                            <option value="metallurgical_engineer"> инженер-металлург</option>
+                                                            <option value="housekeeper"> доменщик</option>
+                                                            <option value="steelmaker"> столевар</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="btn_submit">Следующий шаг</button>
+                                            </form>
+
+                                        </div>
+                                        <img class="employee_background" src="../static/img/newemployee/pictures_table.svg" alt="">
+                                    </div>
+                                    
+                                    
+                                    
+
+                                </div>
+                                
+                                
+
+
+                                <div class ="main-information tab-pane fade show active" id="document">
+                                <!--class="main-information__employees-table"> -->
+                                    
+                                    <div class="document-wrapper">
+                                        <div class="document-table">
+                                            <div class="document-block">
+                                                <span class="span_document">Водительское удостоверение</span>
+                                                <button class="btn_document">
+                                                    <img class="btn_img" src="../static/img/newemployee/plus.svg" alt="">
+                                                    <p>Добавить документ</p>
+                                                </button>
+                                            </div> 
+                                            <div class="document-block">
+                                                <span class="span_document">Водительское удостоверение</span>
+                                                <button class="btn_document">
+                                                    <img class="btn_img" src="../static/img/newemployee/plus.svg" alt="">
+                                                    <p>Добавить документ</p>
+                                                </button>
+                                            </div> 
+                                            <div class="document-block">
+                                                <span class="span_document">Водительское удостоверение</span>
+                                                <button class="btn_document">
+                                                    <img class="btn_img" src="../static/img/newemployee/plus.svg" alt="">
+                                                    <p>Добавить документ</p>
+                                                </button>
+                                            </div> 
+                                            <div class="document-block">
+                                                <span class="span_document">Водительское удостоверение</span>
+                                                <button class="btn_document">
+                                                    <img class="btn_img" src="../static/img/newemployee/plus.svg" alt="">
+                                                    <p>Добавить документ</p>
+                                                </button>
+                                            </div> 
+                                        </div>  
+                                        <div class="document-table">
+                                            <div class="document-block">
+                                                <span class="span_document">Водительское удостоверение</span>
+                                                <button class="btn_document">
+                                                    <img class="btn_img" src="../static/img/newemployee/plus.svg" alt="">
+                                                    <p>Добавить документ</p>
+                                                </button>
+                                            </div> 
+                                            <div class="document-block">
+                                                <span class="span_document">Водительское удостоверение</span>
+                                                <button class="btn_document">
+                                                    <img class="btn_img" src="../static/img/newemployee/plus.svg" alt="">
+                                                    <p>Добавить документ</p>
+                                                </button>
+                                            </div> 
+                                            <div class="document-block">
+                                                <span class="span_document">Водительское удостоверение</span>
+                                                <button class="btn_document">
+                                                    <img class="btn_img" src="../static/img/newemployee/plus.svg" alt="">
+                                                    <p>Добавить документ</p>
+                                                </button>
+                                            </div> 
+                                            <div class="document-block">
+                                                <span class="span_document">Водительское удостоверение</span>
+                                                <button class="btn_document">
+                                                    <img class="btn_img" src="../static/img/newemployee/plus.svg" alt="">
+                                                    <p>Добавить документ</p>
+                                                </button>
+                                            </div> 
+                                        </div>
+                                        <div class="document-table">
+                                            <div class="document-block">
+                                                <span class="span_document">Водительское удостоверение</span>
+                                                <button class="btn_document">
+                                                    <img class="btn_img" src="../static/img/newemployee/plus.svg" alt="">
+                                                    <p>Добавить документ</p>
+                                                </button>
+                                            </div> 
+                                            <div class="document-block">
+                                                <span class="span_document">Водительское удостоверение</span>
+                                                <button class="btn_document">
+                                                    <img class="btn_img" src="../static/img/newemployee/plus.svg" alt="">
+                                                    <p>Добавить документ</p>
+                                                </button>
+                                            </div> 
+                                            <div class="document-block">
+                                                <span class="span_document">Водительское удостоверение</span>
+                                                <button class="btn_document">
+                                                    <img class="btn_img" src="../static/img/newemployee/plus.svg" alt="">
+                                                    <p>Добавить документ</p>
+                                                </button>
+                                            </div> 
+                                            <div class="document-block">
+                                                <span class="span_document">Водительское удостоверение</span>
+                                                <button class="btn_document">
+                                                    <img class="btn_img" src="../static/img/newemployee/plus.svg" alt="">
+                                                    <p>Добавить документ</p>
+                                                </button>
+                                            </div> 
+                                        </div>
+                                        <div class="document-table">
+                                            <div class="document-block">
+                                                <span class="span_document">Водительское удостоверение</span>
+                                                <button class="btn_document">
+                                                    <img class="btn_img" src="../static/img/newemployee/plus.svg" alt="">
+                                                    <p>Добавить документ</p>
+                                                </button>
+                                            </div> 
+                                            <div class="document-block">
+                                                <span class="span_document">Водительское удостоверение</span>
+                                                <button class="btn_document">
+                                                    <img class="btn_img" src="../static/img/newemployee/plus.svg" alt="">
+                                                    <p>Добавить документ</p>
+                                                </button>
+                                            </div> 
+                                            <div class="document-block">
+                                                <span class="span_document">Водительское удостоверение</span>
+                                                <button class="btn_document">
+                                                    <img class="btn_img" src="../static/img/newemployee/plus.svg" alt="">
+                                                    <p>Добавить документ</p>
+                                                </button>
+                                            </div> 
+                                            <div class="document-block">
+                                                <span class="span_document">Водительское удостоверение</span>
+                                                <button class="btn_document">
+                                                    <img class="btn_img" src="../static/img/newemployee/plus.svg" alt="">
+                                                    <p>Добавить документ</p>
+                                                </button>
+                                            </div> 
+                                        </div>                                                     
+                                    </div>
+                                    <div class="newemployee_block">
+                                        <button class="back">
+                                            <img class="left_spart" src="../static/img/newemployee/left_spart.svg" alt="">
+                                            <span> Назад</span>
+                                        </button>
+                                        <button class="add_employee">
+                                            Добавить сотрудника
+                                        </button>
+                                    </div>
+
+
+
+                                </div>
+                                
+                        
+                        
+                </div>
+
+            </div>
+
+        </div>
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+    
+    
+    </body>
+    <script src="../static/js/js.js"></script>
+    <script src="../static/js/jquery-3.5.1.min.js"></script>
+    </html>
+  
