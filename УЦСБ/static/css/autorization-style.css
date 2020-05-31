@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: rgb(255, 0, 0);
+    
+  }
+.main-container {
+    height: 100vh;
+    display: flex;
+    background-color: white;
+    width: 100%;
+    
+    
+    
+   
+}
+.autorization-background{
+    
+    position: fixed;
+    left: 47.1%;
+    top: 10%;
+    
+}
+.login-container{
+    position: absolute;
+    
+    margin-top: 200px;
+    margin-left: 200px;
+    height: 400px;
+    
+    
+    
+}
+.field{
+    display: grid;
+    margin-top: 20px;
+}
+
+input[type="text"], input[type="password"]{
+    width: 350px;
+    height: 40px;
+    
+    border: 2px solid #E0E0E0;
+    
+    border-radius: 10px;
+    margin-top: -5px;
+    
+    
+    
+}
+
+
+label{
+    color: #344267;
+    font-weight: 500;
+    font-size: 11pt;
+    
+}
+input[type="text"]:focus, input[type="password"]:focus   {
+    outline: 0px;
+    outline-offset: 0;
+    border: 2px solid #344267;
+    
+}
+.buttons{
+    padding-top: 25px;
+}
+input[type="submit"] {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: none;
+    color: white;
+    background-color:#344267;
+}
+input[type="submit"]:focus {
+    outline: 0px;
+    outline-offset: 0;
+}
+.buttons a {
+    color: #344267;
+    text-decoration: none;
+    
+}
+.buttons a:hover {
+    color: #344267;
+    text-decoration: none;
+    
+}
+.password-forgot{
+    margin-left: 30px;
+}
+.enter{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 22px;
+    margin-bottom: 30px;
+    
+    
+    
+}
+.logo{
+    margin-right: 10px;
+    height: 30px;
+}
+.top{
+    margin-top: 25px;
+    margin-left: 32px;
+}
+.top span{
+    color: #344267 ;
+}
+.modal{
+    
+    position: fixed;
+    z-index: 1;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+
+}   
+.modal-content{
+    
+    
+    margin: 5% auto;
+    padding: 20px;
+    width: 40%;
+    height: 60%;
+    border-radius: 30px;
+    
+    
+    
+}
+.modal-close{
+    color: #aaa;
+    
+    font-size: 40px;
+    font-weight: bold;
+    cursor:  pointer;
+    padding-left: 96%;
+    padding-top: 0px;
+    margin-top: -20px;
+
+
+}
+h1{
+    font-weight: normal;
+    padding-left: 30px;
+}
+h2{
+
+    font-weight: normal;
+    padding-left: 30px;
+    padding-top: 30px;
+    font-size: 16pt;
+}
+.modal-content .field{
+    padding-left: 30px;
+
+}
+.modal-content .buttons{
+    padding-left: 30px;
+
+}
+
