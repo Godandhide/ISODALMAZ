@@ -1,14 +1,15 @@
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import enum, random, os
+from werkzeug.security import check_password_hash, generate_password_hash
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///isodalmaz.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
-
+app.secret_key = 'some secret key'
 
 class Employee(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -22,6 +23,14 @@ class Employee(db.Model):
     specialty_id = db.Column(db.Integer, nullable=False)
     violation_amount = db.Column(db.Integer, default=0)
     added_date = db.Column(db.DateTime, default=datetime.utcnow)
+
+
+class Users(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    surname = db.Column(db.String(100), nullable=False)
+    name = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
+    psw = db.Column(db.String(200), nullable=False)
 
 
 class Object(db.Model):
@@ -100,7 +109,7 @@ def newemployee():
         try:
             db.session.add(new_employee)
             db.session.commit()
-            return redirect('#document')
+            return redirect('/home')
         except:
             return "Произошла ошибка при добавлении записи в базу данных"
     else:
@@ -124,8 +133,17 @@ def uploadavatar(id):
     return render_template("newemployee.html")
 
 
-@app.route('/autorization')
+@app.route('/autorization', methods=['GET', 'POST'])
 def autorization():
+    if request.method == 'POST':
+        email = request.form['username']
+        psw = request.form['password']
+        if Users.query.filter(Users.email==email).count() != 0:
+            user = Users.query.filter(Users.email==email).first()
+            if check_password_hash(user.psw, psw):
+                return redirect('/')
+        flash("Неверно введены данные", "error")
+
     return render_template("autorization.html")
 
 
@@ -150,6 +168,7 @@ def fill_objects():
         db.session.add(Object(name="Слесарный объект УПЦ 8"))
         db.session.add(Object(name="Слесарный объект УПЦ 12"))
         db.session.add(Object(name="Слесарный объект УПЦ 23"))
+        db.session.add(Object(id=0, name="Слесарный объект УПЦ 0"))
         db.session.commit()
     except:
         return "Ошибка"
@@ -170,13 +189,14 @@ def fill_specialties():
 
 
 def fill_object_lists():
-    for i in range(10):
-        object_list = ObjectsList(employee_id=i + 1, object_id=i % 6 + 1)
-        try:
-            db.session.add(object_list)
-            db.session.commit()
-        except:
-            return "Ошибка"
+    for i in range(12):
+        if i == 10 or i == 4:
+            object_list = ObjectsList(employee_id=i + 1, object_id=i % 6 + 1)
+            try:
+                db.session.add(object_list)
+                db.session.commit()
+            except:
+                return "Ошибка"
 
 
 def fill_violations():
@@ -193,18 +213,34 @@ def fill_violations():
                                   date=datetime(2020, 5, 7), object_id=4, points=1))
         db.session.add(Violations(employee_id=5, violation_grade=ViolationGrade.average,
                                   date=datetime(2020, 5, 29), object_id=1))
+        db.session.add(Violations(employee_id=12, violation_grade=ViolationGrade.heavy,
+                                  date=datetime(2020, 5, 31), object_id=1))
+        db.session.add(Violations(employee_id=12, violation_grade=ViolationGrade.heavy,
+                                  date=datetime(2020, 5, 30), object_id=1))
+        db.session.add(Violations(employee_id=8, violation_grade=ViolationGrade.average,
+                                  date=datetime(2020, 5, 29), object_id=1))
+        db.session.delete(Violations)
         db.session.commit()
     except:
         return "Ошибка"
 
 
+def fill_user():
+    try:
+        db.session.add(Users(surname="Глухов", name="Антон", email="AntonGluhov@gmail.ru",
+                             psw=generate_password_hash('12345678')))
+        db.session.commit()
+    except:
+        return "Ошибка"
+
+
+
 def fill_db():
-    fill_employees()
     fill_objects()
     fill_specialties()
     fill_violations()
     fill_object_lists()
-
+    fill_user()
 
 
 if __name__ == "__main__":

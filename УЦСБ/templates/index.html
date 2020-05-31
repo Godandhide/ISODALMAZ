@@ -56,7 +56,7 @@
                         <span>Нарушений</span>
                     </div>
                     <div class="employee-wrapper">
-                        {% for employee in Employee.query.order_by(Employee.violation_amount).all() %}
+                        {% for employee in Employee.query.order_by(Employee.added_date.desc()).all() %}
                         <div class="employee-block">
                             <div class="employee">
 
@@ -113,22 +113,16 @@
                         <span>Нарушений</span>
                     </div>
                     <div class="employee-wrapper">
-                        {% for violation in Violations.query.order_by(Violations.state).all() %}
+                        {% for violation in Violations.query.order_by(Violations.date.desc()).all() %}
                         {% set employee = Employee.query.get(violation.employee_id) %}
                         <div class="employee-block violations-table">
                             <div class="employee">
 
                                 <span class="employee-name"><img src="../static/img/avatar.svg" alt=""><a href="#">{{employee.surname}} {{employee.name}} {{employee.middle_name}}</a></span>
                             </div>
-                            {% if ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count() > 1 %}
-                            <span>{{ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count()}} объектов</span>
-                            {% elif ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count() == 0 %}
-                            <span>Не указано</span>
-                            {% else %}
-                            <span>{{Object.query.get(ObjectsList.query.filter(ObjectsList.employee_id == employee.id).first().object_id).name}}</span>
-                            {% endif %}
+                            <span>{{Object.query.get(violation.object_id).name}}</span>
                             <span>{{Specialty.query.get(employee.specialty_id).name}}</span>
-                            <span></span>
+                            <span>{{violation.date.date()}}</span>
                         
 
                             <span>{{employee.violation_amount}}/10 <img src="../static/img/More.svg" alt=""></span>
@@ -173,15 +167,9 @@
 
                                 <span class="employee-name"><img src="../static/img/avatar.svg" alt=""><a href="#">{{employee.surname}} {{employee.name}} {{employee.middle_name}}</a></span>
                             </div>
-                            {% if ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count() > 1 %}
-                            <span>{{ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count()}} объектов</span>
-                            {% elif ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count() == 0 %}
-                            <span>Не указано</span>
-                            {% else %}
-                            <span>{{Object.query.get(ObjectsList.query.filter(ObjectsList.employee_id == employee.id).first().object_id).name}}</span>
-                            {% endif %}
+                            <span>{{Object.query.get(violation.object_id).name}}</span>
                             <span>{{Specialty.query.get(employee.specialty_id).name}}</span>
-                            <span></span>
+                            <span>{{violation.date.date()}}</span>
 
                             <span>{{employee.violation_amount}}/10 <img src="../static/img/More.svg" alt=""></span>
                         </div>
