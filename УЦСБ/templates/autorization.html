@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href={% block style_path %}{% endblock %}>
+    
     <link rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
@@ -19,48 +19,65 @@
     crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="../static/css/autorization-style.css">
+    <title>Вход</title>
 </head>
 <body>
+    
     <!-- ВЕСЬ БЛОК -->
     <div class="main-container">
-        <!-- САЙДБАР -->
-        <div class="left__side-block">
-            <a href="#" class="logo"><img src="../static/img/logo.svg" alt=""> </a>
-            <div class="nav-side">
-
-                <a href="#" class="nav-side__link"><img class="menu_buttons" src="../static/img/Home_gray.svg" alt=""></a>
-                <a href="#" class="nav-side__link"><img class="menu_buttons" src="../static/img/Document_gray.svg" alt=""></a>
-                <a href="#" class="nav-side__link"><img class="menu_buttons" src="../static/img/Add_Personal_gray.svg" alt=""></a>
-
-            </div>
-            <a href="#" class="help_logo"><img src="../static/img/Help_gray.svg" alt=""></a>
+        <div class="top">
+            <img class="logo" src="../static/img/logo.svg">
+            <span class="text-logo">ИСОД Алмаз</span>
         </div>
-         <!--ОСНОВНОЙ КОНТЕНТ-->
-         <div class="main-block" id="main-block__first">
-            <div class="top-border">
-                  <h1>{% block header %}{% endblock %}</h1>
-                  <div class="left-top_block">
-                    <a href="#" class="bell_nav"></a>
-                    <div class="top-person">
+        
+        <img class="autorization-background" src="../static/img/autorization-background.svg">
+        <div class="login-container">
 
-                                <ul class="name_nav">
-                                    <li class ="name">Глухов Антон</li>
-                                    <li class >УПЦ-23</li>
-                                </ul>
-
-                                <a href="#" class="photo_nav"><img src="../static/img/photo_name.svg" alt=""></a>
-                        </div>
-                    <a href="#" class="quit_nav"></a>
-                </div>
+            <p class="enter">Вход в систему</p>
+            <div class="field">
+                <label for="username">Email</label>
+                <input type="text" name="username" placeholder=" Введите email">
             </div>
-             {% block content %}{% endblock %}
+            <div class="field">
+                <label for="password">Пароль</label>
+                <input type="password" name="password" placeholder=" Введите пароль">
+               
+            </div>
+            
+            
+            <div class="buttons">
+                <input type="submit" name="submit" value="Войти в систему">
+                <a class="password-forgot" href="#" id="forgot">Забыли пароль?</a>
+                
+            </div>
+            <div id="myModal" class="modal" >
+                <div class="modal-content myclass">
+                    <span class="modal-close">&times;</span>
+                    <h1>Забыли пароль?</h1>
+                    <h2>Мы отправим вам на почту ссылку для восстановления пароля</h2>
+
+                    <div class="field">
+                        <label for="recover-email">Email</label>
+                        <input type="text" name="recover-email" placeholder=" Введите email">
+                    </div>
+                    <div class="buttons">
+                        <input type="submit" class="recover-email" name="recover-submit" value="Восстановить пароль">
+                        
+                    </div>
+                   
+
+                </div>
+
+            </div>
+            
         </div>
 
     </div>
+    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="../static/css/style.css">
+    
     <link rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
@@ -73,7 +90,10 @@
     crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/autorization-style.css">
 
+<script src="../static/js/base.js"></script>
+<script src="../static/js/modal.js"></script>
 
 
 </body>
