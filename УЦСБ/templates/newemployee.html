@@ -45,10 +45,10 @@
                                 <div class="main-block__menu-tabs">
                                     <ul class="nav nav-tabs">
                                         <li class="nav-item active">
-                                            <a class ="nav-link" data-toggle ="tab" href="#infoemployees">Информация о сотруднике</a>
+                                            <a class ="nav-link active" data-toggle ="tab" href="#infoemployees">Информация о сотруднике</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a  class ="nav-link active" data-toggle ="tab" href="#document">Основные документы</a>
+                                            <a  class ="nav-link" data-toggle ="tab" href="#document">Основные документы</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -57,17 +57,17 @@
                             
                                 
                 <div class ="tab-content">
-                                <div class ="main-information tab-pane fade" id="infoemployees">
+                                <div class ="main-information tab-pane fade show active" id="infoemployees">
                                     <div class="info_table">
                                         <div class ="dowload">
                                             <div class="dowload-photo"><!--<div buttons  class="buttons"> -->
-                                                <a href="#" class="anyface_photo"></a>
+                                                <a href={{ next_id }} class="anyface_photo"></a>
                                                 <span class="text_span_photo">Загрузить фото</span>
-                                                <a href="#" class="dowload_photo"></a>                           
+                                                <a href={{ next_id }} class="dowload_photo"></a>
                                             </div>
                                         </div>
                                         <div class="form-wrap_info_employees">
-                                            <form action="post">
+                                            <form method="post">
                                                 <div class="first-row">
                                                     <div class="first_column">
                                                         <label for="surname">Фамилия <span class="red_star">*</span></label>
@@ -94,14 +94,13 @@
                                                     <div  class="first_column">
                                                         <label for="specialty">Специальность</label>
                                                         <select name="specialty" id="" required>  
-                                                            <option value="locksmith">Слесарь</option>
-                                                            <option value="technician_fitter">Слесарь-технолог</option>
-                                                            <option value="seamstress">швея</option>
-                                                            <option value="carpenter"> столяр</option>
-                                                            <option value="turner"> токарь</option>
-                                                            <option value="metallurgical_engineer"> инженер-металлург</option>
-                                                            <option value="housekeeper"> доменщик</option>
-                                                            <option value="steelmaker"> столевар</option>
+                                                            <option value="1">Слесарь</option>
+                                                            <option value="2">Слесарь-технолог</option>
+                                                            <option value="3">Управляющий</option>
+                                                            <option value="4">Водитель</option>
+                                                            <option value="5">Грущик</option>
+                                                            <option value="6">Шахтер</option>
+                                                            <option value="7">Охранник</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -120,7 +119,7 @@
                                 
 
 
-                                <div class ="main-information tab-pane fade show active" id="document">
+                                <div class ="main-information tab-pane fade" id="document">
                                 <!--class="main-information__employees-table"> -->
                                     
                                     <div class="document-wrapper">
