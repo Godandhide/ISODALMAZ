@@ -242,6 +242,7 @@ def fill_db():
     fill_object_lists()
     fill_user()
 
+fill_user()
 
 if __name__ == "__main__":
     app.run(debug=True)
