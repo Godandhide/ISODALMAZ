@@ -36,7 +36,7 @@
                 <div class ="main-information tab-pane fade show active" id="employees">
                     <div class ="main-information__nav">
                         <div class="buttons">
-                            <button>Новый сотрудник<img class="button_img" src="../static/img/New_employee.svg" alt=""></button>
+                            <button onclick="document.location='newemployee'" id="new-emloyee-button">Новый сотрудник<img class="button_img" src="../static/img/New_employee.svg" alt=""></button>
                             <button>Новая заявка<img class="button_img" src="../static/img/New_request.svg" alt=""></button>
 
                         </div>
@@ -45,37 +45,53 @@
 
                         <div class="main-information__nav-search">
 
-                        <input type="text" placeholder="Введите ФИО. подразделение спе...">
+                        <input type="text" placeholder="Введите ФИО, подразделение спе...">
                         </div>
                     </div>
                     <div class="main-information__employees-table">
-                        <span>Фамилия Имя Отчество</span>
-                        <span>Объект</span>
-                        <span>Специальность</span>
+                        <div>
+                            <img class="employee-photo-logo" src="../static/img/employee_face.svg">
+                            <span>Фамилия Имя Отчество</span>
+                        </div>
+                        <div>
+                            <span>Объект</span>
+                            <img class="employee-table-vector" src="../static/img/object_logo.svg">
+                        </div>
+                        <div>
+                            <span>Специальность</span>
+                            <img class="employee-table-vector" src="../static/img/speciality-logo.svg">
+                        </div>
                         
-                        <span>Нарушений</span>
+                        <div>
+                            <span>Нарушений</span>
+                            <img class="employee-table-vector" src="../static/img/violations-logo.svg">
+                        </div>
                     </div>
                     <div class="employee-wrapper">
                         {% for employee in Employee.query.order_by(Employee.added_date.desc()).all() %}
-                        <div class="employee-block">
-                            <div class="employee">
+                        <button class="employee-button">
+                            <div class="employee-block">
+                                
+                                <div class="employee">
 
-                                <span class="employee-name"><img src="../static/img/avatar.svg"
-                                alt=""><a href="#">{{employee.surname}} {{employee.name}} {{employee.middle_name}}</a></span>
+                                    
+                                        <img src="../static/img/avatar.svg"
+                                    alt=""><span>{{employee.surname}} {{employee.name}} {{employee.middle_name}}</span>
+                                </div>
+                                {% if ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count() > 1 %}
+                                <span>{{ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count()}} объектов</span>
+                                {% elif ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count() == 0 %}
+                                <span>Не указано</span>
+                                {% else %}
+                                <span>{{Object.query.get(ObjectsList.query.filter(ObjectsList.employee_id == employee.id).first().object_id).name}}</span>
+                                {% endif %}
+                                <span>{{Specialty.query.get(employee.specialty_id).name}}</span>
+
+                                <span>{{employee.violation_amount}}/10 <img class="arrow-vector" src="../static/img/More.svg" alt=""></span>
+                                
+
                             </div>
-                            {% if ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count() > 1 %}
-                            <span>{{ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count()}} объектов</span>
-                            {% elif ObjectsList.query.filter(ObjectsList.employee_id == employee.id).count() == 0 %}
-                            <span>Не указано</span>
-                            {% else %}
-                            <span>{{Object.query.get(ObjectsList.query.filter(ObjectsList.employee_id == employee.id).first().object_id).name}}</span>
-                            {% endif %}
-                            <span>{{Specialty.query.get(employee.specialty_id).name}}</span>
-
-                            <span>{{employee.violation_amount}}/10 <img src="../static/img/More.svg" alt=""></span>
-
-
-                        </div>
+                        </button>
                         {% endfor %}
 
                     </div>
@@ -102,7 +118,7 @@
 
                         <div class="main-information__nav-search">
 
-                        <input type="text" placeholder="Введите ФИО. подразделение спе...">
+                        <input type="text" placeholder="Введите ФИО, подразделение спе...">
                         </div>
                     </div>
                     <div class="main-information__employees-table violations-table">
@@ -115,17 +131,23 @@
                     <div class="employee-wrapper">
                         {% for violation in Violations.query.order_by(Violations.date.desc()).all() %}
                         {% set employee = Employee.query.get(violation.employee_id) %}
-                        <div class="employee-block violations-table">
-                            <div class="employee">
+                        <div class="custom-button">
+                        <img class="indicator" src="../static/img/indicator_3.svg"></img>
+                        <button class="employee-button violations-button">
+                            <div class="employee-block violations-table">
+                                <div class="employee">
 
-                                <span class="employee-name"><img src="../static/img/avatar.svg" alt=""><a href="#">{{employee.surname}} {{employee.name}} {{employee.middle_name}}</a></span>
+                                    
+                                    <span>{{employee.surname}} {{employee.name}} {{employee.middle_name}}</span>
+                                </div>
+                                <span>{{Object.query.get(violation.object_id).name}}</span>
+                                <span>{{Specialty.query.get(employee.specialty_id).name}}</span>
+                                <span>{{violation.date.date()}}</span>
+                            
+
+                                <span>{{employee.violation_amount}}/10 <img class="arrow-vector violations-vector" src="../static/img/More.svg" alt=""></span>
                             </div>
-                            <span>{{Object.query.get(violation.object_id).name}}</span>
-                            <span>{{Specialty.query.get(employee.specialty_id).name}}</span>
-                            <span>{{violation.date.date()}}</span>
-                        
-
-                            <span>{{employee.violation_amount}}/10 <img src="../static/img/More.svg" alt=""></span>
+                        </button>
                         </div>
                         {% endfor %}
                     </div>
@@ -149,7 +171,7 @@
 
                         <div class="main-information__nav-search">
 
-                        <input type="text" placeholder="Введите ФИО. подразделение спе...">
+                        <input class="main-search" type="text" placeholder="Введите ФИО, подразделение спе...">
                         </div>
                     </div>
                     <div class="main-information__employees-table violations-table">
@@ -162,16 +184,21 @@
                     <div class="employee-wrapper">
                         {% for violation in Violations.query.filter(Violations.state < 3).order_by(Violations.state).all() %}
                         {% set employee = Employee.query.get(violation.employee_id) %}
-                        <div class="employee-block violations-table">
-                            <div class="employee">
+                        <div class="custom-button">
+                            <img class="indicator" src="../static/img/indicator_3.svg"></img>
+                            <button class="employee-button violations-button">
+                                <div class="employee-block violations-table">
+                                    <div class="employee">
 
-                                <span class="employee-name"><img src="../static/img/avatar.svg" alt=""><a href="#">{{employee.surname}} {{employee.name}} {{employee.middle_name}}</a></span>
-                            </div>
-                            <span>{{Object.query.get(violation.object_id).name}}</span>
-                            <span>{{Specialty.query.get(employee.specialty_id).name}}</span>
-                            <span>{{violation.date.date()}}</span>
+                                        <span>{{employee.surname}} {{employee.name}} {{employee.middle_name}}</span>
+                                    </div>
+                                    <span>{{Object.query.get(violation.object_id).name}}</span>
+                                    <span>{{Specialty.query.get(employee.specialty_id).name}}</span>
+                                    <span>{{violation.date.date()}}</span>
 
-                            <span>{{employee.violation_amount}}/10 <img src="../static/img/More.svg" alt=""></span>
+                                    <span>{{employee.violation_amount}}/10 <img class="arrow-vector violations-vector" src="../static/img/More.svg" alt=""></span>
+                                </div>
+                            </button>
                         </div>
                         {% endfor %}
                     </div>
@@ -182,6 +209,7 @@
 
 
             </div>
+            <script src="../static/js/index.js"></script>
 {% endblock %}
 
   

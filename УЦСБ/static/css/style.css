@@ -231,21 +231,34 @@ h1{
   margin: 4px 10px;
   
 }
+.main-search{
+  width: 300px;
+}
+.main-information .main-information__nav .buttons button:focus{
+  outline: 0px;
+  outline-offset: 0;
+  
+}
 .button_img{
   height:14px;
   margin-left: 10px;
 }
-.main-information__nav-search input {
+.main-information__nav-search{
+  
+  margin-bottom: 5px;
+}
+.tab-content .main-information .main-information__nav-search input {
   background: #F4F5FA;
   border: none;
-  padding: 11px 20px 11px 46px;
+  padding: 4px 20px 11px 46px;
   width: 360px;
   border-radius: 10px;
   outline: none;
   background-image: url(../img/Search.svg);
   background-repeat: no-repeat;
   background-position: 20px center;
-  margin-right: 130px;
+  
+  
 }
 .tab-content>.active {
   display: block;
@@ -287,40 +300,123 @@ button:active {
   height: 55vh;
   overflow: auto;
 }
+.arrow-vector{
+  display: flex;
+  padding-top:5px;
+  padding-left: 250px ;
+  width: auto;
+  height: 22px;
+}
 button:focus {outline:0;}
 .main-information__employees-table {
   display: grid;
   
   grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
   padding-bottom: 12px;
-  padding: 15px 30px 15px 30px;
+  padding: 0;
+  padding-bottom: 10px;
   
-  width: calc(100% - 50px);
+  width: calc(100% - 60px);
 }
 .violations-table{
   grid-template-columns: 1.5fr 1fr 0.75fr 1fr 0.75fr;
+  width: calc(100% - 40px);
+  padding-left: 40px;
 }
-.employee-wrapper .violations-table{
+.employee-wrapper .employee-button .violations-table{
   grid-template-columns: 1.5fr 1fr 0.75fr 1fr 0.75fr;
+  padding-left: 10px;
+  width: 100%;
 }
 .main-information__employees-table span{
   opacity: 0.6;
 }
+.employee-block span{
+  display: flex;
+}
+.violations-vector{
+  padding-left: 175px;
+}
+.employee-photo-logo{
+  height:10px;
+  width: auto;
+  margin-right: 25px;
+  margin-left: 20px;
+}
+.employee-table-vector{
+  height:10px;
+  width: auto;
+  margin-left: 5px;
 
+}
+.employee-block span{
+  padding-top:6px;
+}
 .employee img{
   padding-right: 20px;
+  margin-top: 5px;
+  padding-left: 10px;
   width: auto;
-  height: 40px;
+  height: 30px;
+}
+.employee{
+  display:flex;
+  align-items: center;
+}
+.employee-wrapper .employee-button{
+  width: calc(100% - 50px);
+  height: 55px;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.employee-wrapper .employee-button{
+  outline: 0px;
+  outline-offset: 0;
+  border: none;
+}
+.employee-wrapper .employee-button:hover{
+  outline: 0px;
+  outline-offset: 0;
+  border: none;
+  box-shadow: 0px 2px 8px #D9D9D9;
+}
+.employee-wrapper .violations-button{
+  
+  border-top-left-radius: 0px ;
+  border-bottom-left-radius: 0px ;
+  
+}
+.employee-wrapper .violations-button .violations-table .employee span{
+  padding-left: 10px;
+}
+.employee-wrapper .employee-button .employee-block  span{
+  font-weight: 500;
+}
+.custom-button{
+  display: flex;
+}
+
+.indicator{
+  width: auto;
+  height: 55px;
+  margin: 0;
+  padding:0;
+
 }
 .employee-block{
   
   
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1.6fr 0.9fr;
+  grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
   align-items: center;
-  border-bottom: 1px solid #F2F2F2;
-  width: calc(100% - 50px);
-  padding: 15px 30px 15px 30px;
+  
+  
+  
   
 }
 .main-information{
@@ -353,9 +449,19 @@ button:focus {outline:0;}
   border: none;
   margin-left: 10px;
   height: max-content;
+  padding: 0;
   border: 0;
   
   background-color: #FAFAFA;
+}
+.show-list select:focus{
+  outline: 0px;
+  outline-offset: 0;
+}
+.show-list select option:focus, .show-list select option:focus:hover{
+  outline: 0px;
+  outline-offset: 0;
+  
 }
 
 /*stale for page employee*/
@@ -512,6 +618,7 @@ input[type="text"], input[type="date"], select{
   outline-offset: 0;
   opacity: 1;  
 }
+
 .btn_document:hover{
   border: 1px solid rgb(83, 103, 141); 
   opacity: 1; 
